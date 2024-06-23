@@ -13,5 +13,5 @@
 	<project path="kernel/xiaomi/sm6225" name="muralivijay/kernel_xiaomi_sm6225" remote="github" revision="main" />
 
 	<!-- Hardware -->
-	<project path="hardware/xiaomi" name="lineageos/android_hardware_xiaomi" remote="github" revision="lineage-20" />
+	<!-- <project path="hardware/xiaomi" name="lineageos/android_hardware_xiaomi" remote="github" revision="lineage-20" /> -->
 </manifest>
