@@ -2,6 +2,7 @@
 <manifest>
 	<!-- Remote -->
 	<remote name="muralivijay" fetch="https://github.com/muralivijay/" clone-depth="1" />
+	<remote name="lineageos" fetch="https://github.com/lineageos/" clone-depth="1" />
 
 	<!-- Device -->
 	<project path="device/xiaomi/spes" name="android_device_xiaomi_spes" remote="muralivijay" revision="13.0" />
@@ -13,5 +14,5 @@
 	<project path="kernel/xiaomi/sm6225" name="kernel_xiaomi_sm6225" remote="muralivijay" revision="main" />
 
 	<!-- Hardware -->
-	<!-- <project path="hardware/xiaomi" name="lineageos/android_hardware_xiaomi" remote="github" revision="lineage-20" /> -->
+	<project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="lineageos" revision="lineage-20" />
 </manifest>
