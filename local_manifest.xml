@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<!-- Remote -->
+	<remote name="github" fetch="https://github.com/" clone-depth="1" />
+
+	<!-- Device -->
+	<project path="device/xiaomi/spes" name="muralivijay/android_device_xiaomi_spes" remote="github" revision="13.0" />
+
+	<!-- Vendor -->
+	<project path="vendor/xiaomi/spes" name="muralivijay/android_vendor_xiaomi_spes" remote="github" revision="13.0" />
+
+	<!-- Kernel -->
+	<project path="kernel/xiaomi/sm6225" name="muralivijay/kernel_xiaomi_sm6225" remote="github" revision="main" />
+
+	<!-- Hardware -->
+	<project path="hardware/xiaomi" name="lineageos/android_hardware_xiaomi" remote="github" revision="lineage-20" />
+</manifest>
