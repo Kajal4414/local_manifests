@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 	<!-- Remote -->
-	<remote name="muralivijay" fetch="https://github.com/muralivijay/" clone-depth="1" />
-	<remote name="lineageos" fetch="https://github.com/lineageos/" clone-depth="1" />
+	<remote name="github_alt" fetch="https://github.com/" clone-depth="1" />
 
 	<!-- Device -->
-	<project path="device/xiaomi/spes" name="android_device_xiaomi_spes" remote="muralivijay" revision="13.0" />
+	<project path="device/xiaomi/spes" name="kajal4414/android_device_xiaomi_spes" remote="github_alt" revision="13.0" />
 
 	<!-- Vendor -->
-	<project path="vendor/xiaomi/spes" name="android_vendor_xiaomi_spes" remote="muralivijay" revision="13.0" />
+	<project path="vendor/xiaomi/spes" name="muralivijay/android_vendor_xiaomi_spes" remote="github_alt" revision="13.0" />
 
 	<!-- Kernel -->
-	<project path="kernel/xiaomi/sm6225" name="kernel_xiaomi_sm6225" remote="muralivijay" revision="main" />
+	<project path="kernel/xiaomi/sm6225" name="muralivijay/kernel_xiaomi_sm6225" remote="github_alt" revision="main" />
 
 	<!-- Hardware -->
-	<project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="lineageos" revision="lineage-20" />
+	<project path="hardware/xiaomi" name="LineageOS/android_hardware_xiaomi" remote="github_alt" revision="lineage-20" />
+	<project path="hardware/lineage/compat" name="kajal4414/android_hardware_lineage_compat" remote="github_alt" revision="lineage-20" />
 </manifest>
