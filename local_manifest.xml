@@ -5,14 +5,6 @@
 
 	<!-- Device -->
 	<project path="device/xiaomi/spes" name="kajal4414/android_device_xiaomi_spes" remote="github_alt" revision="13.0" />
-
-	<!-- Vendor -->
 	<project path="vendor/xiaomi/spes" name="muralivijay/android_vendor_xiaomi_spes" remote="github_alt" revision="13.0" />
-
-	<!-- Kernel -->
 	<project path="kernel/xiaomi/sm6225" name="muralivijay/kernel_xiaomi_sm6225" remote="github_alt" revision="main" />
-
-	<!-- Hardware -->
-	<project path="hardware/xiaomi" name="LineageOS/android_hardware_xiaomi" remote="github_alt" revision="lineage-20" />
-	<project path="hardware/lineage/compat" name="kajal4414/android_hardware_lineage_compat" remote="github_alt" revision="lineage-20" />
 </manifest>
