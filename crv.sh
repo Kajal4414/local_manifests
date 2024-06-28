@@ -1,19 +1,22 @@
 rm -rf .repo/local_manifest
-# Clone local_manifests repository
-repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs
+repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 /opt/crave/resync.sh
 
-# trees
-rm -rf */xiaomi
-git clone --depth=1 https://github.com/cheldump/android_device_xiaomi_msm8953-common device/xiaomi/msm8953-common
-git clone --depth=1 https://github.com/cheldump/proprietary_vendor_xiaomi_msm8953-common vendor/xiaomi/msm8953-common
-git clone --depth=1 https://github.com/cheldump/android_device_xiaomi_tissot device/xiaomi/tissot
-git clone --depth=1 https://github.com/cheldump/proprietary_vendor_xiaomi_tissot vendor/xiaomi/tissot
-git clone --depth=1 https://github.com/xiaomi-msm8953-devs/android_kernel_xiaomi_msm8953 kernel/xiaomi/msm8953
-git clone --depth=1 https://github.com/LineageOS/android_hardware_xiaomi hardware/xiaomi
-git clone --depth=1 https://github.com/rktdnt/p3 vendor/lineage-priv/keys
+rm -rf device/xiaomi/spes
+rm -rf vendor/xiaomi/spes
+rm -rf vendor/xiaomi/camera
+rm -rf kernel/xiaomi/sm6225
+rm -rf hardware/lineage/compat
+rm -rf hardware/google/pixel/kernel_headers
 
-#beelding
+git clone -b 13.0 --depth=1 https://github.com/kajal4414/android_device_xiaomi_spes.git device/xiaomi/spes && rm -rf device/xiaomi/spes/vendorsetup.sh
+git clone -b 13.0 --depth=1 https://github.com/muralivijay/android_vendor_xiaomi_spes.git vendor/xiaomi/spes
+git clone -b main --depth=1 https://github.com/muralivijay/kernel_xiaomi_sm6225.git kernel/xiaomi/sm6225
+git clone -b lineage-20 --depth=1 https://github.com/LineageOS/android_hardware_xiaomi.git hardware/xiaomi
+git clone -b lineage-20 --depth=1 https://github.com/kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
+git clone -b uvite-sm6225 --depth=1 https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git vendor/xiaomi/camera
+
 . build/envsetup.sh
-riseup tissot userdebug
-rise b
+lunch lineage_spes-user
+make installclean # make clean
+m bacon
