@@ -17,3 +17,5 @@ git clone -b lineage-20 --depth=1 https://github.com/kajal4414/android_hardware_
 lunch lineage_spes-user
 make installclean
 m bacon
+
+rm -rf sign.sh && wget https://raw.githubusercontent.com/kajal4414/build_scripts/pos/sign.sh && bash sign.sh
