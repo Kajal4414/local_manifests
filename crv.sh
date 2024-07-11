@@ -1,5 +1,4 @@
 rm -rf .repo/local_manifest
-repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 /opt/crave/resync.sh
 
 rm -rf */xiaomi
