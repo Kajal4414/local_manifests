@@ -12,8 +12,8 @@ git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_kernel_xiaomi_s
 git clone -b lineage-20.0 --depth 1 https://github.com/Kajal4414/android_hardware_xiaomi.git hardware/xiaomi
 git clone -b lineage-20.0 --depth 1 https://github.com/Kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
 
-git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
-(cd device/xiaomi/spes && git pull && git reset --hard HEAD~1)
+# git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
+# (cd device/xiaomi/spes && git pull && git reset --hard HEAD~1)
 # (cd vendor/xiaomi/spes && git pull && git reset --hard HEAD~1)
 
 . build/envsetup.sh
