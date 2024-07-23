@@ -9,7 +9,11 @@ crave run --no-patch -- "curl -LSs https://raw.githubusercontent.com/Kajal4414/l
 ```
 
 ```sh
-cd .. && crave clone destroy /crave-devspaces/Lineage20
+bash /opt/crave/github-actions/upload.sh "cr-test-1" "spes" "https://github.com/Kajal4414/local_manifests" "cr-test-1" "extra files"
+```
+
+```sh
+cd .. && crave clone destroy /crave-devspaces/Lineage20 -y
 ```
 
 <h4 align="right">
