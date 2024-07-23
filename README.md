@@ -9,7 +9,7 @@ crave run --no-patch -- "curl -LSs https://raw.githubusercontent.com/Kajal4414/l
 ```
 
 ```sh
-bash /opt/crave/github-actions/upload.sh "cr-test-1" "spes" "https://github.com/Kajal4414/local_manifests" "cr-test-1" "extra files"
+bash /opt/crave/github-actions/upload.sh 'crDroid-13.0' 'spes' 'https://github.com/Kajal4414/local_manifests' 'crDroid-13.0-Test-Builds' 'extra files'
 ```
 
 ```sh
