@@ -13,7 +13,7 @@ git clone -b lineage-20.0 --depth 1 https://github.com/Kajal4414/android_hardwar
 git clone -b lineage-20.0 --depth 1 https://github.com/Kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
 
 git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
-(cd device/xiaomi/spes && git pull && git cherry-pick eb06bec 6b49f66 33faf83 b94a188) # skiaglthreaded to remove kernel flags
+(cd device/xiaomi/spes && git pull && git cherry-pick eb06bec^..725606e) # skiaglthreaded to disable lmkd logs
 # (cd vendor/xiaomi/spes && git pull && git reset --hard HEAD~1)
 
 . build/envsetup.sh
