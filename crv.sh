@@ -15,6 +15,7 @@ git clone -b lineage-20.0 --depth 1 https://github.com/Kajal4414/android_hardwar
 git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
 (cd device/xiaomi/spes && git pull && git cherry-pick eb06bec^..52a728e) # skiaglthreaded to reorganize files
 # (cd vendor/xiaomi/spes && git pull && git reset --hard HEAD~1)
+# (cd hardware/qcom-caf/sm8250/display && git fetch https://github.com/LineageOS/android_hardware_qcom_display.git lineage-21.0-caf-sm8250 && git cherry-pick 21d3641)
 
 . build/envsetup.sh
 lunch lineage_spes-user
