@@ -12,7 +12,9 @@ git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_kernel_xiaomi_s
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_xiaomi.git hardware/xiaomi
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
 
-# git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
+git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
+(cd packages/apps/crDroidSettings && git cherry-pick 252a9a9) # remove game space shortcut 
+
 # (cd device/xiaomi/spes && git pull && git cherry-pick eb06bec^..52a728e) # skiaglthreaded to reorganize files
 # (cd vendor/xiaomi/spes && git pull && git reset --hard HEAD~1)
 # (cd hardware/qcom-caf/sm8250/display && git fetch https://github.com/LineageOS/android_hardware_qcom_display.git lineage-21.0-caf-sm8250 && git cherry-pick 21d3641)
