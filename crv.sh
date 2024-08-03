@@ -13,7 +13,8 @@ git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_xiaomi
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
 
 git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
-(cd packages/apps/crDroidSettings && git cherry-pick 252a9a9 428bf1e) # remove game space shortcut, updater
+(cd packages/apps/crDroidSettings  && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 252a9a9 428bf1e) # remove game space shortcut, updater
+(cd frameworks/base && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick ) # remove support for game space
 
 # (cd device/xiaomi/spes && git pull && git cherry-pick eb06bec^..52a728e) # skiaglthreaded to reorganize files
 # (cd vendor/xiaomi/spes && git pull && git reset --hard HEAD~1)
