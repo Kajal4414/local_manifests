@@ -2,8 +2,7 @@ rm -rf .repo/local_manifest
 repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 /opt/crave/resync.sh
 
-rm -rf */xiaomi
-rm -rf hardware/lineage/compat
+rm -rf */xiaomi hardware/lineage/compat
 rm -rf hardware/google/pixel/kernel_headers out
 
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_device_xiaomi_spes.git device/xiaomi/spes
@@ -19,7 +18,4 @@ git config --global user.name "Kajal4414" && git config --global user.email "817
 (cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7) # Remove some packages: LineageSetupWizard, Updater, Eleven, Recorder, ExactCalculator, Jelly, GameSpace and MatLog.
 # (cd hardware/qcom-caf/sm8250/display && git fetch https://github.com/LineageOS/android_hardware_qcom_display.git lineage-21.0-caf-sm8250 && git cherry-pick 21d3641) # Remove clang property.
 
-. build/envsetup.sh
-lunch lineage_spes-user
-make installclean
-m bacon
+. build/envsetup.sh && lunch lineage_spes-user && make installclean && m bacon
