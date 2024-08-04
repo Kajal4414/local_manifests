@@ -21,7 +21,7 @@ echo -e "${BLUE}Patching crDroid Sources...${NC}"
 git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
 (cd packages/apps/crDroidSettings && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 252a9a9 428bf1e || { echo -e "${RED}Cherry-pick failed in crDroidSettings. Aborting.${NC}"; git cherry-pick --abort; }) # Remove GameSpace shortcut and Updater.
 (cd frameworks/base && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04 || { echo -e "${RED}Cherry-pick failed in frameworks/base. Aborting.${NC}"; git cherry-pick --abort; }) # Remove support for GameSpace.
-(cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7 || { echo -e "${RED}Cherry-pick failed in vendor/lineage. Aborting.${NC}"; git cherry-pick --abort; }) # Remove Eleven, ExactCalculator, GameSpace, Jelly, LineageSetupWizard, MatLog, Recorder and Updater.
+(cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7 || { echo -e "${RED}Cherry-pick failed in vendor/lineage. Aborting.${NC}"; git cherry-pick --abort; }) # Remove some packages: Eleven, ExactCalculator, GameSpace, Jelly, LineageSetupWizard, MatLog, Recorder and Updater.
 
 echo -e "${BLUE}Starting Build...${NC}"
 . build/envsetup.sh && lunch lineage_spes-user && m bacon
