@@ -1,21 +1,27 @@
+#!/bin/bash
+
+BLUE='\033[0;34m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+echo -e "${BLUE}Setup Environment...${NC}"
 rm -rf .repo/local_manifest
 repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 /opt/crave/resync.sh
 
-rm -rf */xiaomi hardware/lineage/compat
-rm -rf hardware/google/pixel/kernel_headers out
-
+echo -e "${BLUE}Cloning Device Repos...${NC}"
+rm -rf */xiaomi hardware/google/pixel/kernel_headers hardware/lineage/compat out
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_device_xiaomi_spes.git device/xiaomi/spes
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_vendor_xiaomi_spes.git vendor/xiaomi/spes
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_kernel_xiaomi_spes.git kernel/xiaomi/spes
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_xiaomi.git hardware/xiaomi
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
 
+echo -e "${BLUE}Patching crDroid Sources...${NC}"
 git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
-# (cd device/xiaomi/spes && git pull && git cherry-pick A^..B) # Idk why.
-(cd packages/apps/crDroidSettings && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 252a9a9 428bf1e) # Remove GameSpace shortcut and Updater.
-(cd frameworks/base && git log --oneline -5 && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04 && git log --oneline -5) # Remove support for GameSpace.
-(cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7) # Remove some packages: LineageSetupWizard, Updater, Eleven, Recorder, ExactCalculator, Jelly, GameSpace and MatLog.
-# (cd hardware/qcom-caf/sm8250/display && git fetch https://github.com/LineageOS/android_hardware_qcom_display.git lineage-21.0-caf-sm8250 && git cherry-pick 21d3641) # Remove clang property.
+(cd packages/apps/crDroidSettings && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 252a9a9 428bf1e || { echo -e "${RED}Cherry-pick failed in crDroidSettings. Aborting.${NC}"; git cherry-pick --abort; }) # Remove GameSpace shortcut and Updater.
+(cd frameworks/base && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04 || { echo -e "${RED}Cherry-pick failed in frameworks/base. Aborting.${NC}"; git cherry-pick --abort; }) # Remove support for GameSpace.
+(cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7 || { echo -e "${RED}Cherry-pick failed in vendor/lineage. Aborting.${NC}"; git cherry-pick --abort; }) # Remove Eleven, ExactCalculator, GameSpace, Jelly, LineageSetupWizard, MatLog, Recorder and Updater.
 
-. build/envsetup.sh && lunch lineage_spes-user && make installclean && m bacon
+echo -e "${BLUE}Starting Build...${NC}"
+. build/envsetup.sh && lunch lineage_spes-user && m bacon
