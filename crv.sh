@@ -13,9 +13,9 @@ git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_xiaomi
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
 
 git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
-# (cd device/xiaomi/spes && git fetch https://github.com/Kajal4414/android_device_xiaomi_spes.git 13.0-new && git cherry-pick 8bbcff8) # Idk why.
+# (cd device/xiaomi/spes && git pull && git cherry-pick 8bbcff8) # Idk why.
 (cd packages/apps/crDroidSettings && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 252a9a9 428bf1e) # Remove GameSpace shortcut and Updater.
-(cd frameworks/base && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04) # Remove support for GameSpace.
+(cd frameworks/base && git log --oneline -5 && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04 && git log --oneline -5) # Remove support for GameSpace.
 (cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7) # Remove some packages: LineageSetupWizard, Updater, Eleven, Recorder, ExactCalculator, Jelly, GameSpace and MatLog.
 # (cd hardware/qcom-caf/sm8250/display && git fetch https://github.com/LineageOS/android_hardware_qcom_display.git lineage-21.0-caf-sm8250 && git cherry-pick 21d3641) # Remove clang property.
 
