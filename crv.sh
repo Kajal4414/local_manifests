@@ -13,6 +13,9 @@ git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_xiaomi
 git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_hardware_lineage_compat.git hardware/lineage/compat
 
 git config --global user.name "Kajal4414" && git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
+(cd packages/apps/crDroidSettings && git log --oneline -10)
+(cd frameworks/base && git log --oneline -10)
+(cd vendor/lineage && git log --oneline -10)
 rm -rf packages/apps/crDroidSettings && git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git packages/apps/crDroidSettings # Remove GameSpace shortcut and Updater.
 rm -rf frameworks/base && git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_frameworks_base.git frameworks/base # Remove support for GameSpace.
 rm -rf vendor/lineage && git clone -b 13.0 --depth 1 https://github.com/Kajal4414/android_vendor_crdroid.git vendor/lineage # Remove some packages: LineageSetupWizard, Updater, Eleven, Recorder, ExactCalculator, Jelly, GameSpace and MatLog.
