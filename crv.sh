@@ -11,7 +11,7 @@ repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
 
 echo -e "${BLUE}Cloning Device Repos...${NC}"
 rm -rf device/xiaomi/spes vendor/xiaomi/spes kernel/xiaomi/spes out
-git clone -b 14.0-dev https://github.com/Kajal4414/android_device_xiaomi_spes.git device/xiaomi/spes && (cd device/xiaomi/spes && git pull && git reset --hard HEAD~1 && git log --oneline -5)
+git clone -b 14.0-dev https://github.com/Kajal4414/android_device_xiaomi_spes.git device/xiaomi/spes && (cd device/xiaomi/spes && git revert -s 8fb02d5 --no-edit && git log --oneline -5)
 git clone -b 14.0 --depth 1 https://github.com/Kajal4414/android_vendor_xiaomi_spes.git vendor/xiaomi/spes
 git clone -b 14.0 --depth 1 https://github.com/Kajal4414/android_kernel_xiaomi_spes.git kernel/xiaomi/spes
 [ ! -d "hardware/xiaomi" ] && git clone -b 14.0 --depth 1 https://github.com/Kajal4414/android_hardware_xiaomi.git hardware/xiaomi
