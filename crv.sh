@@ -24,4 +24,4 @@ git clone -b 14.0 --depth 1 https://github.com/Kajal4414/android_kernel_xiaomi_s
 # (cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7 || { echo -e "${RED}Cherry-pick failed in vendor/lineage. Aborting.${NC}"; git cherry-pick --abort; }) # Remove some packages: Eleven, ExactCalculator, GameSpace, Jelly, LineageSetupWizard, MatLog, Recorder and Updater.
 
 echo -e "${BLUE}Starting Build...${NC}"
-. build/envsetup.sh && make installclean && brunch spes user
+. build/envsetup.sh && breakfast spes user && brunch spes
